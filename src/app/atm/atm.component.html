@@ -9,8 +9,8 @@
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button>Make a Widthdrawl</button>
-        <input ng-model="value" type="number">
+        <input [(ngModel)]="value" type="number"/>
+        <button (click)="onClick()">Make a Widthdrawl</button>
       </li>
       <li class="options-item">
         <button>Deposit Money</button>

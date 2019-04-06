@@ -9,9 +9,24 @@ import { Router } from '@angular/router';
 })
 export class AtmComponent {
 
+value;
+balance;
+
   constructor(private bankService: BankService) {}
   
+  onClick() {
+    console.log(this.value)
+  }
+  
 
-    
+let withdraw = {
+    if (this.value <= this.balance){ 
+      return (this.value - this.balance)
+    } else {
+          return alert("Nice Try!")
+    }
+  }
+ 
+ 
  
 }

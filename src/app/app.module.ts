@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { routes } from './app.router';
 import { AppComponent } from './app.component';
 import { AtmComponent } from './atm/atm.component';
@@ -19,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     router
   ],
   providers: [BankService],  //I fixed this.  Services is not a property on NgModule.  Any service should be listed in providers
