@@ -3,8 +3,8 @@
   <section class="display">
     <!-- Display: Customer information except for when inquiring about transaction -->
     <h3>Customer Information</h3>
-    <p>Customer Name: First Last</p>
-    <p>Age: 100</p>
+    <p>Customer Name: {{this.account.fname}} {{this.account.lname}}</p>
+    <p>Age: {{this.account.age}}</p>
     <p>Address: 1234 Test Lane.<br>
       San Diego, CA 92000<br>
       United States
@@ -19,7 +19,8 @@
   <aside class="options">
     <section class="balance">
       <!-- Display customer balance -->
-      $20.00 USD
+      <!--$20.00 USD-->
+      ${{ this.account.balance }} USD
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">

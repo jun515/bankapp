@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BankService } from '../bank.service';
 import { Router } from '@angular/router';
 
@@ -7,26 +7,30 @@ import { Router } from '@angular/router';
   templateUrl: './atm.component.html',
   styleUrls: ['./atm.component.css']
 })
-export class AtmComponent {
-
-value;
-balance;
+export class AtmComponent implements OnInit {
+  account;
+  value;
 
   constructor(private bankService: BankService) {}
   
-  onClick() {
-    console.log(this.value)
+  ngOnInit() {
+    this.account = this.bankService.getAccount();
   }
   
-
-let withdraw = {
-    if (this.value <= this.balance){ 
-      return (this.value - this.balance)
+  
+  withdrawl(){
+    if (this.value <= this.account.balance){ 
+      this.account.balance = this.account.balance - this.value
+      this.bankService.updateBalance(this.account.balance)
+      return (this.account.balance)
     } else {
-          return alert("Nice Try!")
+      return alert("Nice Try!")
     }
   }
- 
- 
- 
+  
+  deposit(){
+    this.account.balance += this.value
+     this.bankService.updateBalance(this.account.balance)
+    return (this.account.balance)
+  }
 }

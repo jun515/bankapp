@@ -4,21 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BankService {
-
-  constructor() {}
   
-   account: any = {
-    fname: 'first name',
-    lname: 'last name',
-    age: 0,
+  account: any = {
+    fname: 'Oscar',
+    lname: 'Reyes',
+    age: 28,
     address: {
       street: '1234 street st',
       city: 'city',
       state: 'state',
       zip: 12345,
-      country: 'canada'
+      country: 'USA'
     },
-    balance: 0.01,
+    balance: 1000.00,
     currency: 'usd',
     transactions: [
       {
@@ -41,7 +39,17 @@ export class BankService {
       }
     ]
   };
+
+  constructor() {}
   
+    getAccount(){
+      return this.account
+    }
+    
+    updateBalance(newBalance){
+      this.account.balance = newBalance;
+    }
+    
    
     
 

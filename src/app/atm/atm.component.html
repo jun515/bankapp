@@ -1,7 +1,7 @@
 <h1>ATM View</h1>
 <div class="main">
   <section class="display">
-    > Welcome, Henry!
+    > Welcome, {{this.account.fname}}
     <!-- Display Feedback information here -->
     
   </section>
@@ -10,11 +10,11 @@
     <ul class="options-list">
       <li class="options-item">
         <input [(ngModel)]="value" type="number"/>
-        <button (click)="onClick()">Make a Widthdrawl</button>
+        <button (click)="withdrawl()">Make a Widthdrawl</button>
+        
       </li>
       <li class="options-item">
-        <button>Deposit Money</button>
-        <input ng-model="value" type="number">
+        <button (click)="deposit()">Deposit Money</button>
       </li>
       <li class="options-item">
         <button>Balance Inquiry</button>

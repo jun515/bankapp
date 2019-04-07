@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BankService } from '../bank.service';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./teller.component.css']
 })
 export class TellerComponent {
+  account;
 
-  constructor() { }
+  constructor(private bankService: BankService) {}
+  
+  ngOnInit() {
+    this.account = this.bankService.getAccount();
+  }
 
 }
