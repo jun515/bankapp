@@ -50,7 +50,31 @@ export class BankService {
       this.account.balance = newBalance;
     }
     
-   
+    withdraw(value){
+    if (value <= this.account.balance){ 
+      this.account.balance = this.account.balance - value
+      this.updateBalance(this.account.balance)
+      return (this.account.balance), alert("Success! $" + value + " has been withdrawn.")    
+      } else if (value > this.account.balance){
+      return alert(`WARNING: Insufficient funds
+      Please check current balance.`)
+    }else {
+      return alert(`Please enter a number.`)
+    }
+    }
     
+    deposit(value){
+      this.account.balance += value
+      return (this.account.balance), alert("Success! $" + value + " has been deposited.")
+  }
+    
+    balanceInquiry(value){
+    alert(`Current balance: $` + this.account.balance + ` Click OK to continue.`)
+  }
+    // updateTrans(newTrans){
+    //   this.account.transactions = newTrans;
+    // }
+    
+
 
 }

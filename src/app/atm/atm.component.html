@@ -1,26 +1,33 @@
 <h1>ATM View</h1>
 <div class="main">
   <section class="display">
-    > Welcome, {{this.account.fname}}
+    > Welcome, {{this.account.fname}}!<br>
     <!-- Display Feedback information here -->
+    {{this.account.any}}<br>
+    {{this.account.balance}}
     
   </section>
+  
   <aside class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
+      <input [(ngModel)]="value" type="number"/>
+
       <li class="options-item">
-        <input [(ngModel)]="value" type="number"/>
-        <button (click)="withdrawl()">Make a Widthdrawl</button>
-        
+        <button (click)="withdraw()">Make a Widthdrawl</button>
       </li>
+      
       <li class="options-item">
         <button (click)="deposit()">Deposit Money</button>
       </li>
+      
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click)="balanceInquiry()">Balance Inquiry</button>
+        
       </li>
+      
       <li class="options-item">
-        <button>Transactions History</button>
+        <button (click)="transactions()">Transactions History</button>
       </li>
     </ul>
   </aside>

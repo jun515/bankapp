@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class TellerComponent {
   account;
+  value;
 
   constructor(private bankService: BankService) {}
   
   ngOnInit() {
     this.account = this.bankService.getAccount();
+  }
+  
+  deposit(){
+    this.bankService.deposit(this.value)
+    this.value = null;
   }
 
 }

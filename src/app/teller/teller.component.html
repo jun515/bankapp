@@ -5,9 +5,9 @@
     <h3>Customer Information</h3>
     <p>Customer Name: {{this.account.fname}} {{this.account.lname}}</p>
     <p>Age: {{this.account.age}}</p>
-    <p>Address: 1234 Test Lane.<br>
-      San Diego, CA 92000<br>
-      United States
+    <p>{{this.account.address.street}}<br>
+      {{this.account.address.city}}, {{this.account.address.state}} {{this.account.address.zip}}<br>
+      {{this.account.address.country}}
     </p>
     <br><br>
     <!-- Display: if inquiring about transactions -->
@@ -24,11 +24,12 @@
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
+      <input [(ngModel)]="value" type="number"/>
       <li class="options-item">
-        <button>Widthdrawl for Customer</button>
+        <button >Widthdrawl for Customer</button>
       </li>
       <li class="options-item">
-        <button>Deposit for Customer</button>
+        <button (click)="deposit()">Deposit for Customer</button>
       </li>
       <li class="options-item">
         <button>Customer Transaction History</button>
